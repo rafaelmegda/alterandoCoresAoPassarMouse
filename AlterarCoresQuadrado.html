@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Exercicios</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+
+<body>
+    
+    
+        <button id="new">Criar Novo Quadrado</button>
+                <div id="squares"></div>
+
+    <script>
+        var btnElement = document.getElementById('new');
+        var squaresElement = document.getElementById('squares');
+
+        //Exercicio_2
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+        var newColor = getRandomColor(); // #E943F0
+
+                
+        btnElement.onclick = function () {
+            var square = document.createElement('div');
+
+            square.style.width = '100px';
+            square.style.height = '100px';
+            square.style.backgroundColor = '#F00';
+
+            square.onmouseover = function(){
+                square.style.backgroundColor = getRandomColor();
+            }
+
+            squaresElement.appendChild(square);
+        };
+
+
+    </script>
+
+</body>
+
+</html>
